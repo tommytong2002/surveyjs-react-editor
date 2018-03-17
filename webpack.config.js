@@ -5,7 +5,9 @@ const path = require('path');
 module.exports = {
     context: path.join(__dirname, "src"),
     devtool: debug ? "inline-sourcemap" : false,
-    entry: "./index.js",
+    entry: [
+        "./surveyjs-builder-react.js",
+    ],
     module: {
 
         rules: [
@@ -31,12 +33,8 @@ module.exports = {
 
 
     output: {
-        path: __dirname + "/src/",
-        filename: "index.min.js"
+        path: __dirname + "/dist/",
+        filename: "surveyjs-builder-react.min.js",
     },
-    plugins: debug ? [] : [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false}),
-    ],
+
 };

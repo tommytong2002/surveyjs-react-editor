@@ -1,5 +1,8 @@
 # Cruft
 *.sublime-workspace
+*.iml
+.idea/
+package-lock.json
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -69,3 +72,4 @@ typings/
 
 # dotenv environment variables file
 .env
+
